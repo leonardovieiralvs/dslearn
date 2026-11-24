@@ -17,3 +17,8 @@ INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('BootCamp HTML', 'im
 
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2022-07-25T13:00:00Z', TIMESTAMP WITH TIME ZONE '2023-07-25T13:00:00Z', 1);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2022-12-25T13:00:00Z', TIMESTAMP WITH TIME ZONE '2023-12-25T13:00:00Z', 1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Principal', 1, 'img1.jpg', 1, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Dúvidas', 2, 'img2.jpg', 2, 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives', 3, 'img3.jpg', 0, 1);
+
