@@ -3,9 +3,12 @@ package com.lsouza.dslearn.entities;
 import com.lsouza.dslearn.pk.EnrollmentPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_enrollment")
@@ -18,6 +21,9 @@ public class Enrollment {
     private Instant refundMoment;
     private boolean available;
     private boolean onlyUpdate;
+
+    @ManyToMany(mappedBy = "enrollmentsDone")
+    private Set<Lesson> lessons = new HashSet<>();
 
     public Enrollment() {}
 
@@ -76,5 +82,9 @@ public class Enrollment {
 
     public void setOnlyUpdate(boolean onlyUpdate) {
         this.onlyUpdate = onlyUpdate;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
     }
 }

@@ -2,7 +2,10 @@ package com.lsouza.dslearn.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Objects;
+import java.util.List;
+
 
 @Entity
 @Table(name = "tb_section")
@@ -23,6 +26,9 @@ public class Section {
     @ManyToOne
     @JoinColumn(name = "prerequisite_id")
     private Section prerequisite;
+
+    @OneToMany(mappedBy = "section")
+    private List<Lesson> lessons = new ArrayList<>();
 
     public Section() {}
 
