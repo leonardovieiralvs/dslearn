@@ -14,7 +14,7 @@ public abstract class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String tittle;
+    private String title;
     private Integer position;
 
     @ManyToOne
@@ -34,9 +34,9 @@ public abstract class Lesson {
     public Lesson() {
     }
 
-    public Lesson(Long id, String tittle, Integer position, Section section) {
+    public Lesson(Long id, String title, Integer position, Section section) {
         this.id = id;
-        this.tittle = tittle;
+        this.title = title;
         this.position = position;
         this.section = section;
     }
@@ -49,12 +49,12 @@ public abstract class Lesson {
         this.id = id;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Integer getPosition() {
